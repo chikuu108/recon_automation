@@ -1,0 +1,199 @@
+# Elite Recon
+
+Advanced reconnaissance automation framework for bug bounty and offensive security research.
+
+## Overview
+
+Elite Recon is a full-scale automated reconnaissance pipeline designed for bug bounty hunters and security researchers. It combines passive intelligence gathering, active discovery, endpoint extraction, deep JavaScript analysis, secret detection, and infrastructure fingerprinting into a single workflow.
+
+The pipeline is built to automate high-volume reconnaissance while reducing noise through validation, entropy checks, and confidence scoring.
+
+---
+
+## Features
+
+### Subdomain Enumeration
+- subfinder
+- assetfinder
+- amass
+- crt.sh
+- AlienVault OTX
+- URLScan
+- Wayback CDX
+- HackerTarget
+- riddler.io
+- Shodan integration
+- alterx permutations
+
+### Live Host Discovery
+- HTTP probing with httpx
+- Wildcard filtering
+- Redirect handling
+
+### URL Collection
+- gau
+- waybackurls
+- katana
+- hakrawler
+- gospider
+- paramspider
+- urlfinder
+- GitHub endpoint mining
+
+### Asset Extraction
+- JavaScript files
+- JSON files
+- Webpack chunks
+- Environment files
+- Inline scripts
+- robots.txt
+- sitemap.xml
+
+### Deep Analysis Engine
+- 100+ secret detection patterns
+- Entropy validation
+- False-positive reduction
+- Confidence scoring
+- API key discovery
+- JWT detection
+- Database connection strings
+- Cloud credential discovery
+- SaaS token extraction
+
+### Active Testing
+- GraphQL discovery
+- Firebase exposure checks
+- S3 bucket checks
+- CORS misconfiguration checks
+- JWT analysis
+- Subdomain takeover detection
+
+---
+
+## Installation
+
+
+
+### Required Tools
+
+Install the following tools before running:
+
+- subfinder
+- assetfinder
+- amass
+- httpx
+- dnsx
+- gau
+- katana
+- hakrawler
+- gospider
+- paramspider
+- waybackurls
+- alterx
+
+Optional:
+- github-subdomains
+- github-endpoints
+- shosubgo
+
+---
+
+## Usage
+
+### Basic Scan
+
+```bash
+./elite_recon.sh target.com
+```
+
+### With GitHub Token
+
+```bash
+./elite_recon.sh target.com -gt GITHUB_TOKEN
+```
+
+### Enable Active Testing
+
+```bash
+./elite_recon.sh target.com -gt GITHUB_TOKEN --active
+```
+
+---
+
+## Output Structure
+
+```text
+elite_recon_target.com_timestamp/
+├── 01_subs/
+├── 02_live/
+├── 03_urls/
+├── 04_live_urls/
+├── 05_assets/
+├── 06_findings/
+├── 07_urlsecrets/
+├── 08_active/
+└── 09_recon/
+```
+
+---
+
+## Detection Categories
+
+### HIGH Confidence
+- AWS Keys
+- GitHub Tokens
+- Stripe Secrets
+- OpenAI Keys
+- Firebase Tokens
+- MongoDB URLs
+- PostgreSQL Credentials
+- Slack Webhooks
+- Twilio Tokens
+- Cloudflare Tokens
+
+### MEDIUM Confidence
+- Generic API Keys
+- OAuth Secrets
+- Bearer Tokens
+- Feature Flags
+- Internal Endpoints
+
+### LOW Confidence
+- Debug Comments
+- Source Maps
+- Development References
+
+---
+
+## Example Features
+
+- Deep JS secret analysis
+- Webpack chunk extraction
+- Automated endpoint harvesting
+- GraphQL endpoint discovery
+- Infrastructure exposure checks
+- SaaS token identification
+- Secret entropy verification
+- False-positive filtering
+
+---
+
+## Legal Disclaimer
+
+This project is intended for authorized security testing and educational purposes only.
+
+You are responsible for complying with all applicable laws and regulations. Do not scan, attack, or test systems without explicit permission from the owner.
+
+The author assumes no liability and is not responsible for any misuse or damage caused by this project.
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Author
+
+GitHub: https://github.com/chikuu108
